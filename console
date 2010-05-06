@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'resque'
+require 'resque/status'
+require 'irb'
+
+require 'boring_job'
+require 'sleepy_job'
+
+puts "*** Resque Jobs ***"
+puts "There are currently #{Resque.workers.size} workers running"
+puts
+puts "Try something:"
+puts
+puts '---- BORING '+'-'*50
+puts "Resque.enqueue(BoringJob, :location => 'Fraktal')"
+puts "Resque.peek :default"
+puts
+puts '---- SLEEPY '+'-'*50
+puts "job_id = SleepyJob.create(:location => 'Fraktal')"
+puts "Resque::Status.get(job_id).inspect"
+puts '-'*60
+puts
+
+IRB.start
