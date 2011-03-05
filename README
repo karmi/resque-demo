@@ -1,7 +1,0 @@
-Resque Demo
-===========
-
-1. Run `$ ruby console` to put some jobs on the queue
-2. Run `rake demo:one` or `rake demo:three` to launch worker(s)
-3. Run ` resque-web` or ` thin -R resque-web-with-status.ru -p 5000 start` to see the Resque GUI
-4. Don't forget you can get the info on queues/jobs directly from Redis, run: `$ redis-cli keys 'resque*'`

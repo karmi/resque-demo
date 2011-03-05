@@ -5,22 +5,22 @@ require 'resque'
 require 'resque/status'
 require 'irb'
 
-require 'boring_job'
-require 'sleepy_job'
+require 'basic_job'
+require 'progress_job'
 
 puts "*** Resque Jobs ***"
 puts "There are currently #{Resque.workers.size} workers running"
 puts
 puts "Try something:"
 puts
-puts '---- BORING '+'-'*50
-puts "Resque.enqueue(BoringJob, :location => 'Fraktal')"
+puts '---- BASIC JOB '.ljust(80, '-')
+puts "Resque.enqueue(BasicJob, :id => 1)"
 puts "Resque.peek :default"
 puts
-puts '---- SLEEPY '+'-'*50
-puts "job_id = SleepyJob.create(:location => 'Fraktal')"
+puts '---- JOB WITH PROGRESS '.ljust(80, '-')
+puts "job_id = ProgressJob.create(:id => 2)"
 puts "Resque::Status.get(job_id).inspect"
-puts '-'*60
+puts ''.ljust(80, '-')
 puts
 
 IRB.start
