@@ -10,7 +10,7 @@ You need a working [Ruby](http://www.ruby-lang.org/en/downloads/), [Rubygems](ht
 
 Install the required Rubygems:
 
-    [sudo] gem install SystemTimer resque resque-status
+    [sudo] bundle install
 
 Usage
 -----
