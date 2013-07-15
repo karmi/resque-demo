@@ -5,8 +5,8 @@ require 'resque'
 require 'resque/status'
 require 'irb'
 
-require 'basic_job'
-require 'progress_job'
+require './basic_job.rb'
+require './progress_job.rb'
 
 puts "*** Resque Jobs ***"
 puts "There are currently #{Resque.workers.size} workers running"

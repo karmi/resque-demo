@@ -1,7 +1,7 @@
 require 'resque/tasks'    # Require Resque tasks
 
-require 'basic_job'       # Require jobs
-require 'progress_job'
+require './basic_job.rb'       # Require jobs
+require './progress_job.rb'
 
 namespace :workers do
 
