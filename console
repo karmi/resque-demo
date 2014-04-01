@@ -7,6 +7,7 @@ require 'irb'
 
 require './basic_job.rb'
 require './progress_job.rb'
+require './failing_job.rb'
 
 puts "*** Resque Jobs ***"
 puts "There are currently #{Resque.workers.size} workers running"
@@ -21,6 +22,10 @@ puts '---- JOB WITH PROGRESS '.ljust(80, '-')
 puts "job_id = ProgressJob.create(:id => 2)"
 puts "Resque::Status.get(job_id).inspect"
 puts ''.ljust(80, '-')
+puts
+puts '---- FAILING JOB '.ljust(80, '-')
+puts "Resque.enqueue(FailingJob, :id => 1)"
+puts "Resque.peek :default"
 puts
 
 IRB.start
